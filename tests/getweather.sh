@@ -12,7 +12,7 @@ INST=/home/pi/smartframe
 
 init()
 {
-  cp $INST/weather.xsl $TMP
+  cp $INST/tests/weather.xsl $TMP
 }
 
 geticons()

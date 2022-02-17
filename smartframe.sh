@@ -1,6 +1,9 @@
+#!/bin/bash 
+
+. /home/pi/.profile
 
 TMP=/var/tmp
-export APPID=$OPENWEATERAPPID
+export APPID=$OPENWEATHERAPPID
 CITYID=5115985 	# east new york
 CITYID=5016450  	# anoka, MN
 MEASUREMENT=metric
@@ -175,7 +178,7 @@ createweatherxml()
    echo "</weather>"                                         >>$OUTPUT
 }
 
-function createweatherpng()
+createweatherpng()
 {
    fop -xml $OUTPUT -xsl weather.xsl -png weather.png
 }

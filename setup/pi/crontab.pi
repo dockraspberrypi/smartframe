@@ -1,0 +1,6 @@
+
+5,35  * * * * /home/pi/smartframe/smartframe.sh showpicture
+15,45  * * * * /home/pi/smartframe/smartframe.sh showpicture
+26,56 * * * * /home/pi/smartframe/smartframe.sh showweather
+26,56 * * * * /home/pi/smartframe/smartframe.sh next
+

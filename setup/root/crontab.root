@@ -1,0 +1,3 @@
+@reboot su pi -c "/home/pi/smartframe/initpicture.sh" 
+* * * * * /root/checknet.sh 
+

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export DISPLAY=:0.0
-sleep 120
+sleep 30
 CNT=`ls -l /home/pi/smartframe | wc -l`
 if [ $CNT -ge 1 ]
 then

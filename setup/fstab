@@ -1,2 +1,0 @@
-# add this to fstab so we have a small ram disk
-tmpfs /var/tmp tmpfs nodev,nosuid,size=15M 0 0 

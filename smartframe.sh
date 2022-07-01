@@ -11,13 +11,14 @@ MEASUREMENT=imperial
 OFFSET=7
 MAXFORECAST=7
 INST=/home/pi/smartframe
+PICLOG=$TMP/showpicture.log
 
 export DISPLAY=:0.0
 
 
 init()
 {
-  cp $INST/tests/weather.xsl $TMP
+  cp $INST/weather.xsl $TMP
 }
 
 geticons()
@@ -209,6 +210,8 @@ getrandompic()
   # calculate a random # between 0 - count
   idx=$(( $RANDOM % $cnt ))
   
+  #echo $TOTALFILES > /var/tmp/list.txt
+
   dbxcli get ${myArray[$idx]} $TMP/picture.jpg
 }
 
@@ -225,7 +228,7 @@ displaypic()
   else 
     PIC=$TMP/picture.jpg
   fi
-  feh -y -x --scale-down --auto-zoom $PIC &
+  feh -x -Z -F $PIC > $PICLOG 2>&1 &
   
   # now kill old pic
   sleep 1
@@ -256,13 +259,13 @@ nextphoto()
 
 init
 
-if [ $1 == "weather" ]
+if [ $1 == "showweather" ]
 then 
   getweather
 fi
 
 
-if [ $1 == "picture" ]
+if [ $1 == "showpicture" ]
 then 
   nextphoto
 fi

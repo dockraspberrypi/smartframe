@@ -1,7 +1,5 @@
 
 sudo apt-get update
-#sudo apt-get --purge remove openjdk-11-jdk
-#sudo apt -y install openjdk-11-jdk
 sudo apt -y install jq feh fop
 cd /home/pi/
 mkdir bin
